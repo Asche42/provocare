@@ -1,0 +1,25 @@
+- if @user
+  %h1= "Profil de " + @user.firstname + " " + @user.lastname
+
+  %p
+    %dl
+      %dd= "Rôle : " + role(@user)
+      %dd= "Statut : " + status(@user)
+      %dd= "Adresse électronique : " + @user.email
+
+  %h2 Ses Articles
+
+  - if @user.articles.empty?
+    %p= "Aucun article publié."
+  - else
+    %p
+      =pluralize(@user.articles.size.to_s, "article publié.", " articles publiés.")
+      %dl
+        - @user.articles.each do |article|
+          %dt= link_to article.title, article
+          %dd= article.description
+- else
+  %h1
+    Erreur
+    %p.alert= "Il n'existe pas d'utilisateur avec l'identifiant " + params[:id]
+

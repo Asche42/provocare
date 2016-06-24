@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Article:
+  = @comment.article_id
+%p
+  %b User:
+  = @comment.user_id
+%p
+  %b Content:
+  = @comment.content
+%p
+  %b Created on:
+  = @comment.created_on
+%p
+  %b Updated on:
+  = @comment.updated_on
+
+= link_to 'Edit', edit_comment_path(@comment)
+\|
+= link_to 'Back', comments_path

@@ -1,0 +1,29 @@
+%h1 Articles
+
+%table
+  %thead
+    %tr
+      %th Titre
+      %th Description
+      %th Contenu
+      %th Auteur
+      %th
+      %th
+      %th
+
+  %tbody
+    - @articles.each do |article|
+      %tr
+        %td= article.title
+        %td= article.description
+        %td= article.content
+        %td= link_to article.user.fullname, profile_path(article.user.id)
+        %td= link_to 'Show', article
+        - if article.user == current_user or @admin
+          %td= link_to 'Edit', edit_article_path(article)
+          %td= link_to 'Destroy', article, :method => :delete, :data => { :confirm => 'Voulez-vous vraiment supprimer cet article ?' }
+
+%br
+
+- if user_signed_in?
+  = link_to 'New Article', new_article_path

@@ -1,0 +1,33 @@
+%p#notice= notice
+
+%p
+  %b Type:
+  = offer_type(@offer.offer_type)
+%p
+  %b User:
+  = @offer.user.fullname
+%p
+  %b Company:
+  = @offer.company
+%p
+  %b Titre:
+  = @offer.title
+%p
+  %b Content:
+  = @offer.content
+%p
+  %b Date from:
+  = @offer.date_from
+%p
+  %b Date to:
+  = @offer.date_to
+%p
+  %b Created on:
+  = @offer.created_on
+%p
+  %b Updated on:
+  = @offer.updated_on
+
+= link_to 'Edit', edit_offer_path(@offer)
+\|
+= link_to 'Back', offers_path

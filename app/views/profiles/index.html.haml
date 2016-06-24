@@ -1,0 +1,7 @@
+%h1 Profils
+
+%dl
+  - @users.each do |user|
+    %dt
+      = link_to user.firstname + " " + user.lastname, action: 'show', id: user.id
+    %dd= "Administrateur" if user.admin?

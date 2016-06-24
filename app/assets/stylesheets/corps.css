@@ -1,0 +1,893 @@
+/*Définition d'une nouvelle police*/
+@font-face {
+  font-family: 'Indie Flower';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Indie Flower'), local('IndieFlower'), url(https://fonts.gstatic.com/s/indieflower/v8/10JVD_humAd5zP2yrFqw6ugdm0LZdjqr5-oayXSOefg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+/*Vue du site prenant toute la fenêtre*/
+html{
+	height : 100%;
+	margin: 0 auto;
+}
+
+/*Partie entête du site*/
+
+header{
+	margin : 0 auto;
+	width : 100%;
+	height : 15%;
+	margin: 0 auto;
+	position: fixed;
+	z-index: 4;
+}
+
+.structure_header{
+	width: 80%;
+	height: 100%;
+	margin: auto;
+	background-color: white;
+}
+
+/*Continuité du menu du site*/
+.menu_header{
+	width : 17em;
+	height : 15%;
+	display : flex;
+	font-size: 0.8em;
+	position: fixed;
+	
+}
+
+.vue_menu_header{
+	width : 80%;
+	height: 100%;
+	display : flex;
+	flex-direction : column;
+}
+
+.menu_classique_header{
+
+	height : 100%;
+	width: 100%;
+}
+
+/*CSS du titre du site*/
+.Nom{
+	text-align: center;
+	font-family: 'Arial Light';
+}
+
+.provocare{
+	font-size: 2em;
+	font-weight: bold;
+}
+
+
+/*Corps du site*/
+body{
+	margin : 0 auto;
+	width : 100%;
+	height: 100%;
+	font-family: Arial, serif;
+	font-size : 1em;
+	background-color: white;
+	display:flex;
+}
+
+/*Séparation menu/contenu*/
+
+.structure{
+	width : 80%;
+	display: flex;
+	flex-direction: rows;
+	height : 85%;
+	margin-top: auto;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: white;
+	opacity: 0.9;
+	
+}
+
+/*Position et taille du menu*/
+.menu{
+	width : 17em;
+	height : 85%;
+
+	position: fixed;
+	top: 15%;
+	display : flex;
+	font-size: 0.8em;
+	
+}
+
+/*Partie interactive du menu*/ 
+.vue_menu{
+	width : 80%;
+	height: 100%;
+	display : flex;
+	flex-direction : column;
+	font-weight : bold;
+	/*margin-top: 1em;*/
+	padding-bottom:1em;
+}
+
+.rubrique_menu{
+	height : 20%;
+	text-align : left;
+	padding-left : 1.2em;
+	padding-top: 0.5em;
+	/*padding-bottom : 0.2em;*/
+	position : relative;
+	border: 1px white solid;
+
+}
+
+.rubrique_menu:hover{
+	background-color: #00AEEF;
+	color:white;
+}
+
+#selected{
+	background-color: #00AEEF;
+	color: white;
+}
+
+.menu_classique{
+	height : 20%;
+/*	margin-bottom : 25%;*/
+	width: 100%;
+}
+
+/*Espacement du titre du menu_connecté*/
+
+.espace_menu{
+	height: 4em;
+}
+
+.espace_menu{
+	height: 4em;
+}
+
+
+.titre_espace_membre{
+	text-align : left;
+/*	padding-bottom : 15%;*/
+/*	padding-top : 10%;*/
+	padding-left: 1.2em;
+	color: #F83369;
+	margin-top: 3em;
+}
+
+.input_connexion_id, .input_connexion_mdp{
+	display:flex;
+	margin-top: 0.5em;
+	border-bottom: 0.2em #BAB7B7 solid;
+	width: 90%;
+}
+
+.logo_connexion{
+	height: 20%;
+	width: 20%;
+	display: flex;
+}
+
+.text_input{
+	width: 80%;
+	border: none;
+	padding-left: 0.5em
+}
+
+.input_rester{
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+.bouton_go{
+	width: 100%;
+	height: 3em;
+	background-color: #F83369;
+	font-weight: bold;
+}
+
+.text_go{
+	margin: auto;
+	font-weight: bold;
+	font-size: 0.8em;
+	color: white;
+}
+
+.menu_membre{
+	height : 15%;
+}
+
+.rubrique_membre{
+	height : 28%;
+	padding-left : 1.2em;
+	border: white solid 1px;
+	padding-top: 0.5em;
+	position : relative;
+}
+
+.rubrique_membre:hover{
+	background-color :#F83369; 
+	color: white;
+}
+
+#selected_membre{
+	background-color: #F83369;
+	color: white;
+}
+
+.center{
+	margin:auto;
+}
+
+.salutation{
+	font-family: 'Indie Flower';
+	font-size: 1.2em;
+	text-align: left;
+	padding-left: 1.2em;
+	color: #F83369;
+}
+
+.photo{
+	height: 8em;
+	width: 100%;
+	display: flex;
+	
+}
+
+.photo_menu_membre{
+	width: 70%;
+	height: 110%;
+}
+
+/*Barre jaune du menu*/
+.jaune{
+	height : 1.5em;
+	background-color: #FFE000;
+	margin-bottom : 0;
+}
+
+
+/*Placement du contenu de la page*/
+.Page{
+	flex : 1;
+	margin-left: 23%;
+	margin-right : 3%;
+	margin-bottom: 2% ;
+	font-size: 1em;
+	color: #919191;
+}
+
+
+
+/*Généralité*/
+
+/*CSS des slashs des rubriques*/
+.slash_color_blue{
+	color: #00AEEF;
+	font-weight: bold;
+}
+
+.slash_color_rose{
+	color: #F83369;
+	font-weight: bold;
+}
+
+/*CSS des liens*/
+a, a:hover, a:visited{
+	text-decoration: none;
+	color : black;
+}
+
+/*Boîte vide utilisé pour l'espacement entre deux boîtes*/
+.espace{
+	flex: 1;
+}
+
+/*Structure des boutons du sites*/
+.bouton{
+	height: 100%;
+	width: 100%;
+	display: flex;
+}
+
+
+.text_bouton{
+	margin: auto;
+	font-weight: bold;
+	font-size: 0.8em;
+}
+/*Page d'accueil*/
+
+.block_accueil1, .block_accueil2, .block_accueil3 {
+	background-color: #F3F3F3;
+}
+
+.block_accueil1{
+	width: 100%;
+	height : 14em;
+	margin : 0 auto;
+	
+}
+
+.block_accueilbis{
+	display : flex;
+	width: 100%;
+	margin-top: 3%;
+	height: 14em;
+}
+
+.block_accueil2{
+	height: 100%;
+	width: 60%;
+
+}
+
+.block_accueil3{
+	height: 100%;
+	width: 35%;
+	margin-left: 5% ;
+
+}
+
+/*Structure des pages articles et cv thèque*/
+
+.block_line_filter{
+	height: 5%;
+	width: 103%;
+	/*border: 1px black solid;*/
+	margin-bottom: 3%;
+	margin-top: 3%;
+	display: flex;
+}
+
+.text_filtre{
+	height: 100%;
+	display: flex;
+}
+
+.tableau_case{
+	height: 100%;
+	width: 100%;
+	/*border: 1px blue solid;*/
+	margin-bottom: 5%;
+}
+
+.line_case{
+	width: 105%;
+	height: 35%;
+	/*border: 1px green solid;*/
+	display: flex;
+	margin-bottom: 2%;
+}
+
+.case{
+	height: 100%;
+	width: 23%;
+	border: 1px solid;
+	margin-right : auto;
+	overflow: hidden;
+}
+
+.photo_case{
+	height: 100%;
+	width: 50%;
+	overflow: hidden;
+	display: flex;
+	/*border:1px solid;*/
+}
+
+/*Page Articles*/
+
+/*CSS du lien d'un article*/
+.bouton2{
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+/*Definition des différentes barre de couleur*/
+.color-article1{
+	height: 10%;
+	background-color: #FADC18;
+}
+.color-article2{
+	height: 10%;
+	background-color: #D91D86;
+}
+.color-article3{
+	height: 10%;
+	background-color: #29AB65;
+}
+
+/*Image d'un article*/
+#test{
+	background-image: url("logo_identifiant.png");
+	background-position: center;
+}
+
+/*CSS du titre de l'article*/
+.titre_article{
+	background-color: black;
+	opacity: 0.7;
+	color: white;
+	height: 30%;
+	text-align: center;
+}
+
+.espace_icon_article{
+	flex:1;
+}
+
+.titre_article:hover{
+	height: 100%;
+	transition: 0.5s;
+}
+
+/*Page  du CV thèque*/
+
+/*CSS du bouton tous les membre*/
+.bouton_tous_membres{
+	height: 100%;
+	width: 20%;
+	border: 1px solid;
+}
+
+/*CSS des cases de la cv thèque*/
+.profil_CV_theque{
+	width: 220%;
+	height: 100%;
+	left: -75%;
+	/*top: -10%;*/
+	margin-top: auto;
+	position: relative;
+}
+
+.text_case{
+	height: 100%;
+	width: 50%;
+	z-index: 2;
+	text-align: right;
+	font-size: 0.7em;
+	margin-right: 0.5em;
+}
+
+.icon_diplome{
+	height: 20%;
+	width: 30%;
+	position: relative;
+}
+
+.prenom_nom{
+	font-weight: bold;
+}
+
+.date{
+	margin-right: 0.2em;
+}
+
+/*Vue commune d'un profil via CV thèque ou Profil*/
+
+/*Position de la vue du profil*/
+.vue_profil{
+	height: 45%;
+	width: 103%;
+	/*border: 1px green solid;*/
+	display: flex;
+}
+
+/*Positionnement de la photo du membre*/
+.photo_profil{
+	margin-left: 10%;
+	height: 100%;
+	width: 30%;
+	overflow: hidden;
+	/*border: 1px green solid;*/
+	margin-bottom: 0 auto;
+	display: flex;
+   flex-direction: column;
+}
+
+.Photo_profil{
+	/*border: 1px solid blue;*/
+	width: 100%;
+	height: 100%;
+	margin-top: 10%;
+}
+
+/*Description du membre*/
+.descript_profil{
+	height: 100%;
+	width: 50%;
+	/*border: 1px green solid;*/
+	display: flex;
+}
+
+.profil_descript{
+	/*border: 1px green solid;*/
+	margin: auto;
+	font-family: 'Indie Flower';
+	font-size: 2em;
+	margin-left: 5%;
+}
+.img_diplome{
+	display: flex;
+	flex-direction: column;
+}
+
+.cadre_diplome{
+	/*border: 1px green solid;*/
+	text-align: right;
+	display: flex;
+	justify-content: flex-end;
+	margin-left: 50%;
+}
+
+.icon{
+	width: 3em;
+	height: 100%;
+}
+
+.date_diplome{
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+/*CSS des lignes colorées*/
+
+.ligne_color{
+	height: 2%;
+	width: 103%;
+	/*border: 1px green solid;*/
+	display: flex;
+}
+
+.color{
+	flex: 1;
+	/*border: 1px green solid;*/
+}
+#color1{background-color: #3AB44A;}
+#color2{background-color: #1A7A2F;}
+#color3{background-color: #8EC442;}
+#color4{background-color: #8DC441;}
+#color5{background-color: #0152A5;}
+#color6{background-color: #00ADED;}
+#color7{background-color: #00A54F;}
+#color8{background-color: #F7E551;}
+#color9{background-color: #FA2E67;}
+#color10{background-color: #FA2E67;}
+#color11{background-color: #622E91;}
+#color12{background-color: #EB1E20;}
+
+
+/*Page d'un CV selectionné depuis la page CV thèque*/
+
+/*CSS des boutons de contact linkedin et twitter du membre*/
+.contact{
+	height: 10%;
+	width: 103%;
+	/*border: 1px green solid;*/
+	display: flex;
+	margin-top : 1em;
+}
+
+.position_logo{
+	margin: auto;
+	margin-top: 1%;
+	display: flex;
+	height: 100%;
+	/*border: 1px red solid;*/
+	width: 16%;
+}
+
+.logo_linkedin, .logo_twitter{
+	height: 80%;
+	width: 30%;
+}
+
+.logo_twitter{
+	margin-left: 25%;
+}
+
+.img_logo_lk, .img_logo_tw{
+	width: 100%;
+	/*border: 1px green solid;*/
+}
+
+/*CSS de la partie description d'un membre*/
+.description{
+	/*border: 1px green solid;*/
+	margin-top: 5%;
+	height: 20%;
+	width: 103%;
+}
+
+/*CSS des boutons de la page d'un membre*/
+
+.interaction{
+	/*border: 1px green solid;*/
+	width: 103%;
+	height: 10%;
+	display: flex;
+}
+
+.bouton_contact{
+	height: 60%;
+	width: 20%;
+	border: 1px  solid;
+	display: flex;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.retour_CV{
+	height: 60%;
+	width: 30%;
+	border: 1px  solid;
+	display: flex;
+	margin-left: 5%;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+/*Page profil d'un membre*/
+
+/*Interface modifiables de la page Profil*/
+.contact_modif{
+
+	margin-top: 3em;
+	width: 103%;
+}
+
+.titre_membre{
+	display:flex;
+}
+
+.input_titre_membre{
+	flex:1;
+}
+
+.input_titre{
+	width: 50%;
+}
+
+.bouton_changer_photo{
+	height: 2em;
+	width: 25%;
+	border: 1px solid;
+}
+
+.input_lk, .input_tw{
+	display: flex;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.logo{
+	overflow: hidden;
+	height: 5%;
+	width: 5%;
+	display: flex;
+	flex-direction: rows;
+	margin-right: 2em;
+}
+
+.logo_img{
+	height: 100%;
+	width: 100%;
+}
+
+.lien_input{
+	height: 50%;
+	width: 50%;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.input_descript{
+	margin-top: 3em;
+}
+
+.label_descript{
+	font-weight: bold;
+}
+
+.typo_rose{
+	color: #F83369 ;
+}
+
+.text_descript{
+	margin-top: 3em;
+	width: 100%;
+	resize: none;
+}
+
+.bouton_modifier{
+	height: 2em;
+	width: 10em;
+	border: 1px black solid;
+	margin-bottom: 2em;
+	margin-left: auto;
+	margin-top: 1em;
+}
+
+.modifier_profil{
+	text-align: right;
+}
+
+/*Page d'un article*/
+
+.details_article{
+	height: 30%;
+	margin-bottom: 1em;
+	display:flex;
+	padding: 0.5em;
+}
+
+.descript_article{
+	padding: 0.5em;
+	margin-bottom: 2em;
+}
+
+.img_article{
+	width: 20%;
+	display:flex;
+	overflow: hidden;
+}
+
+.article_img{
+	width: 100%;
+	height: 100%;
+}
+
+.details{
+	width: 45%;
+	padding: 0.5em;
+}
+
+.partage_article{
+	display: flex;
+	height: 25%;
+	margin: auto;
+}
+
+.auteur_article{
+	flex: 1;
+	padding: 0.5em;
+	text-align: right;
+	padding-top: 3em;
+	display: flex;
+}
+
+.text_partage{
+	margin-bottom: auto;
+	margin-top: auto;	
+}
+.logo_partage{
+	height: 100%;
+	width: 10%;
+	margin-left: 1em;
+	display:flex;
+	/*overflow: hidden;*/
+}
+
+.logo_part{
+	width: 100%;
+	height: 100%;
+}
+
+.line_auteur{
+	height: 45%;
+	display: flex;
+}
+.img_auteur{
+	display: flex;
+	border: 1px black solid;
+	overflow: hidden;
+	border-radius: 50%;
+	width: 20%;
+	height: 100%;
+	margin-left: 0.5em;
+}
+
+.auteur_img{
+	width: 110%;
+	height: 100%;
+	margin: auto;
+}
+
+.nom_auteur{
+	margin-bottom: auto;
+	margin-top: auto;
+	flex: 1;
+	text-align: right;
+}
+
+.commentaire_article{
+	margin-bottom: 2em;
+	font-weight: bold;
+}
+
+.votre_commentaire{
+	width: 80%;
+	resize: none;
+	margin-bottom: 1em;
+
+}
+
+.ajouter_commentaire{
+	display: flex;
+	justify-content: flex-end;
+}
+.bouton_ajouter_commentaire{
+	width: 30%;
+	height: 2em;
+	border: 1px solid;
+}
+
+/*Page de rédaction d'un article*/
+
+.redaction_article{
+	width: 100%;
+	resize: none;
+}
+.details_cadre{
+	width: 60%;
+	padding: 0.5em;
+	display:flex;
+	flex-direction: column;
+}
+.details_redaction{
+	margin-top: auto;
+	margin-bottom: auto;
+	display: flex;
+}
+
+.bouton_changer_img{
+	width: 50%;
+	height: 2em;
+	border: 1px  solid;
+	display: flex;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.input_article{
+	flex:1;
+	margin-left: 1em;
+
+}
+
+#titre, #sous-titre{
+	width: 100%;
+}
+
+.soumettre_article{
+	display: flex;
+	justify-content: flex-end;
+	width: 100%;
+}
+.bouton_soumettre_article{
+	width: 30%;
+	height: 2em;
+	border: 1px solid black;
+}
+
+/*Page de la job thèque*/
+
+.coming{
+	height: 100%;
+	display:flex;
+}
+.soon{
+	margin: auto;
+	font-size: 8em;
+	font-family: 'Indie Flower';
+}

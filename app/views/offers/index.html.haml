@@ -1,0 +1,35 @@
+%h1 Offres
+
+%table
+  %thead
+    %tr
+      %th Proposé par
+      %th Type
+      %th Entreprise
+      %th Intitulé
+      %th De
+      %th À
+      %th
+      %th
+      %th
+
+  %tbody
+    - @offers.each do |offer|
+      %tr
+        %td= offer.user.fullname
+        %td= offer_type(offer.offer_type)
+        %td= offer.company
+        %td= offer.title
+        %td= offer.date_from
+        %td= offer.date_to
+        %td= link_to 'Voir', offer
+        - if offer.user == current_user or @admin
+          %td= link_to 'Modifier', edit_offer_path(offer)
+          %td= link_to 'Supprimer', offer, :method => :delete, :data => { :confirm => 'Êtes-vous sûr ?' }
+        - else
+          %td
+          %td
+
+%br
+
+= link_to 'Nouvelle offre', new_offer_path

@@ -1,0 +1,30 @@
+= form_for @offer do |f|
+  - if @offer.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@offer.errors.count, "error")} prohibited this offer from being saved:"
+      %ul
+        - @offer.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :offer_type
+    %select
+      - (0..2).each do |i|
+        = content_tag(:option, offer_type(i), value: i)
+  .field
+    = f.label :company
+    = f.text_field :company
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :content
+    = f.text_area :content
+  .field
+    = f.label :date_from
+    = f.date_select :date_from
+  .field
+    = f.label :date_to
+    = f.date_select :date_to
+  .actions
+    = f.submit 'Save'
