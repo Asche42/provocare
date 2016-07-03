@@ -29,13 +29,31 @@
 		<div class="menu">
 			<div class="vue_menu">
 				<div class="menu_classique">
-					<a href="Accueil.php"><div class = "rubrique_menu" id="selected">
-						Accueil
-					</div></a>
-					<a href="Articles.php"><div class = "rubrique_menu"><p class = "center">Articles</p></div></a>
-					<a href="Innovons.php"><div class = "rubrique_menu"><p class = "center">Innovons ensemble !</p></div></a>
-					<a href="CV_theque.php"><div class = "rubrique_menu"><p class = "center">CV thèque</p></div></a>
-					<a href="Qui.php"><div class = "rubrique_menu"><p class = "center">Qui sommes-nous ?</p></div></a>
+          <%= link_to(controller: 'welcome') do %>
+            <div class = "rubrique_menu" <% if params[:controller] == 'welcome' && params[:action] == 'index' %> id="selected" <% end %>>
+              <p class = "center">Accueil</p>
+            </div>
+          <% end %>
+          <%= link_to(controller: 'articles') do %>
+            <div class = "rubrique_menu" <% if params[:controller] == 'articles' %> id="selected" <% end %>>
+              <p class = "center">Articles</p>
+            </div>
+          <% end %>
+          <%= link_to(controller: 'welcome', action: 'innovate_together') do %>
+            <div class = "rubrique_menu" <% if params[:controller] == 'welcome' && params[:action] == 'innovate_together' %> id="selected" <% end %>>
+					    <p class = "center">Innovons ensemble !</p>
+            </div>
+          <% end %>
+          <%= link_to(controller: 'profiles') do %>
+            <div class = "rubrique_menu" <% if params[:controller] == 'profiles' %> id="selected" <% end %>>
+					    <p class = "center">CV thèque</p>
+            </div>
+          <% end %>
+          <%= link_to(controller: 'welcome', action: 'who_are_we') do %>
+            <div class = "rubrique_menu" <% if params[:controller] == 'welcome' && params[:action] == 'who_are_we' %> id="selected" <% end %>>
+              <p class = "center">Qui sommes-nous ?</p>
+            </div>
+          <% end %>
 				</div>
 				
 				<!-- Espacement menu -->
@@ -52,13 +70,13 @@
 					<form>
 						<div class="input_connexion_id">
 							<div class="logo_connexion">
-                <%= image_tag 'logo_identifiant.png' %>
+                <%= image_tag 'logo_identifiant.png',  class: 'logo_img' %>
 							</div>
 							<input type="text" class="text_input" placeholder="Identifiant">
 						</div>
 						<div class="input_connexion_mdp">
 							<div class="logo_connexion">
-                <%= image_tag 'logo_mdp.png' %>
+                <%= image_tag 'logo_mdp.png', class: 'logo_img' %>
 							</div>
 							<input type="text" class="text_input" placeholder="Mot de passe">
 						</div>
@@ -80,15 +98,6 @@
 		</div>
 		<div class="Page">
       <%= yield %>
-      <!--
-			Accueil<span class="slash_color_blue"> /</span><p></p>
-			<div class="block_accueil1">
-			</div>
-			<div class="block_accueilbis">
-				<div class="block_accueil2"></div>
-				<div class="block_accueil3"></div>
-			</div>
-      -->
 		</div>
 	</div>
 </body>
