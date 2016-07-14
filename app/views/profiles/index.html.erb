@@ -1,0 +1,36 @@
+CV thèque <span class="slash_color_blue"> /</span><p></p>
+<div class="block_line_filter">
+  <div class="bouton_tous_membres"><a class="bouton" href="#"><p class="text_bouton">Tous nos membres</p></a></div>
+  <div class="espace"></div>
+  <div class="text_filtre"><p class="text_bouton">Filtrer par</p></div>
+</div>
+<div class="tableau_case">
+  <% @users.each_with_index do |user, index| %>
+    <% if index.modulo(4) == 0 %><div class="line_case"><% end %>
+      <div class="case">
+        <%= link_to({action: 'show', id: user.id}, class: 'bouton') do %>
+          <div class="photo_case">
+            <%= image_tag 'Profil_romain.png', class: 'profil_CV_theque' %>
+          </div>
+          <div class="text_case">
+            <%= image_tag 'icon_diplome.png', class: 'icon_diplome' %>
+            <span class="prenom_nom"><span class="date"><%= user.promotion %></span></br></br><%= user.firstname %></br><%= user.lastname %></span></br>
+            <%= user.job %></br> 
+            <% if user.company %>
+              Chez</br>
+              <%= user.company %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    <% if index.modulo(4) == 3 %></div><% end %>
+  <% end %>
+  <% (4 - @users.size).abs.modulo(4).times do %>
+    <div class="case">
+      <a class="bouton" href="#">
+      </a>
+    </div>
+  <% end %>
+  <% if @users.size.modulo(3) != 2 %></div><% end %>
+
+</div>
