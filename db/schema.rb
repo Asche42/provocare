@@ -69,6 +69,12 @@ ActiveRecord::Schema.define(version: 20150922212155) do
     t.integer  "status",                 default: 0,     null: false
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
+    t.string   "job"
+    t.string   "company"
+    t.integer  "promotion"
+    t.string   "linkedin"
+    t.string   "twitter"
+    t.string   "description"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
