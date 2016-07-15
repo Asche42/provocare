@@ -1,80 +1,28 @@
 Articles<span class="slash_color_blue"> /</span><p></p>
 <div class="block_line_filter">
-  <div class="bouton_tous_membres"><a class="bouton" href="Articles.php"><p class="text_bouton">Tous nos articles</p></a></div>
+  <div class="bouton_tous_membres"><a class="bouton" href="#"><p class="text_bouton">Tous nos articles</p></a></div>
   <div class="espace"></div>
   <div class="text_filtre"><p class="text_bouton">Filtrer par</p></div>
 </div>
 <div class="tableau_case">
-  <div class="line_case">
-    <div class="case" id="test">
-      <div class="color-article<%= rand(1..3) %>"></div>
-        <a class="bouton2" href="Article.php">
+  <% @articles.each_with_index do |article, index| %>
+    <% if index.modulo(4) == 0 %><div class="line_case"><% end %>
+      <div class="case" style="background-position: center; background-image: url('<%= asset_url 'logo_identifiant.png' %>')">
+        <div class="color-article<%= rand(1..3) %>"></div>
+        <%= link_to({action: 'show', id: article.id}, class: 'bouton2') do %>
           <div class="espace_icon_article">
           </div>
-          <div class="titre_article">Titre</br>Sous-titre<p>Description</p></div>
-        </a>
-    </div>
+          <div class="titre_article"><%= article.title %></br><%= article.subtitle %><p><%= article.description %></p></div>
+        <% end %>
+      </div>
+    <% if index.modulo(4) == 3 %></div><% end %>
+  <% end %>
+  <% (4 - @articles.size).abs.modulo(4).times do %>
     <div class="case">
       <div class="color-article<%= rand(1..3) %>"></div>
       <a class="bouton" href="#">
       </a>
     </div>
-    <div class="case">
-      <div class="color-article<%= rand(1..3) %>"></div>
-      <a class="bouton" href="#">
-      </a>
-    </div>
-    
-    <div class="case">
-      <div class="color-article<%= rand(1..3) %>"></div>
-      <a class="bouton" href="#">
-      </a>
-    </div>
-  </div>
-
-  <div class="line_case">
-    <div class="case">
-      <div class="color-article<%= rand(1..3) %>"></div>
-      <a class="bouton" href="#">
-      </a>
-    </div>
-    <div class="case">
-      <div class="color-article<%= rand(1..3) %>"></div>
-      <a class="bouton" href="#">
-      </a>
-    </div>
-    <div class="case">
-      <div class="color-article<%= rand(1..3) %>"></div>
-      <a class="bouton" href="#">
-      </a>
-    </div>
-    <div class="case">
-      <div class="color-article<%= rand(1..3) %>"></div>
-      <a class="bouton" href="#">
-      </a>
-    </div>
-  </div>
-
-  <div class="line_case">
-    <div class="case">
-      <div class="color-article<%= rand(1..3) %>"></div>
-      <a class="bouton" href="#">
-      </a>
-    </div>
-    <div class="case">
-      <div class="color-article<%= rand(1..3) %>"></div>
-      <a class="bouton" href="#">
-      </a>
-    </div>
-    <div class="case">
-      <div class="color-article<%= rand(1..3) %>"></div>
-      <a class="bouton" href="#">
-      </a>
-    </div>
-    <div class="case">
-      <div class="color-article<%= rand(1..3) %>"></div>
-      <a class="bouton" href="#">
-      </a>
-    </div>
-  </div>
+  <% end %>
+  <% if @articles.size.modulo(3) != 2 %></div><% end %>
 </div>
