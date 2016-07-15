@@ -1,0 +1,38 @@
+Articles<span class="slash_color_blue"> /</span><p></p>
+<div class="details_article">
+  <div class="img_article"><%= image_tag 'logo_identifiant.png', class: 'article_img' %></div>
+
+  <div class="details">
+    <p>
+    <%= @article.created_at.strftime('%d/%m/%Y') %><br><br>
+    <strong><%= @article.title %></strong><br>
+    <em><%= @article.subtitle %></em></br>
+      <div class="partage_article">
+        <div class="text_partage">Partager cet article</div>
+        <div class="logo_partage"><a class="bouton" href="https://www.facebook.com/sharer/sharer.php?u=<%= URI.encode(request.original_url) %>"><%= image_tag 'logo_fb.png', class: 'logo_part' %></a></div>
+        <div class="logo_partage"><a class="bouton" href="https://www.linkedin.com/shareArticle?mini=true&url=<%= URI.encode(request.original_url) %>&title=<%= URI.encode(@article.title) %>&summary=<%= URI.encode(@article.subtitle) %>&source="><%= image_tag 'logo_lk.png', class: 'logo_part' %></a></div>
+        <div class="logo_partage"><a class="bouton" href="https://www.twitter.com/share?text=<%= URI.encode(@article.title) %>"><%= image_tag 'logo_twitter.png', class: 'logo_part' %></a></div>
+      </div>
+    </p>
+  </div>
+
+  <div class="auteur_article">
+    <div class="line_auteur">
+      <div class="nom_auteur">Rédigé par <%= @article.user.firstname + " " + @article.user.lastname %></div><div class="img_auteur"><%= image_tag 'Profil_romain.png', class: 'auteur_img' %></div>
+    </div>
+  </div>
+
+</div>
+<div class="descript_article">
+  <%= @article.content %>
+</div>
+
+<% if current_user %>
+<div class="commentaire_article">
+  Mettre votre commentaire</br></br>
+  <textarea class="votre_commentaire"rows="5"></textarea>
+  <div class="ajouter_commentaire">
+    <div class="bouton_ajouter_commentaire"><a class="bouton" href="#"><p class="text_bouton">Ajouter un commentaire</p></a></div>
+  </div>
+</div>
+<% end %>
