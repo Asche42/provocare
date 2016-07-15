@@ -16,7 +16,8 @@ ActiveRecord::Schema.define(version: 20150922212155) do
   create_table "articles", force: true do |t|
     t.text     "content",     null: false
     t.string   "title",       null: false
-    t.string   "description", null: false
+    t.string   "subtitle",    null: false
+    t.string   "description"
     t.datetime "created_on"
     t.datetime "updated_on"
     t.integer  "user_id"
