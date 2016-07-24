@@ -1,8 +1,8 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>Provocare</title>
-	<meta charset="UTF-8">
+  <title>Provocare</title>
+  <meta charset="UTF-8">
   <link rel="icon" type="image/png" href="/img/favicon-192.png" sizes="192x192">
   <link rel="icon" type="image/png" href="/img/favicon-160.png" sizes="160x160">
   <link rel="icon" type="image/png" href="/img/favicon-96.png" sizes="96x96">
@@ -13,27 +13,23 @@
   <%= csrf_meta_tags %>
 </head>
 <header>
-	<div class="structure_header">
-		<div class="menu_header">
-			<div class="vue_menu_header">
-				<div class="menu_classique_header">
-					<div class="jaune">
-						
-					</div>
-					<p class="Nom"><span class="provocare">Provocare</span></br>
-					<em>Générateur d'idées</em></p>
-				</div>
-
-			</div>
-
-		</div>
-	</div>
+  <div class="structure_header">
+    <div class="menu_header">
+      <div class="vue_menu_header">
+        <div class="menu_classique_header">
+          <div class="jaune"></div>
+          <p class="Nom"><span class="provocare">Provocare</span></br>
+          <em>Générateur d'idées</em></p>
+        </div>
+      </div>
+    </div>
+  </div>
 </header>
 <body>
-	<div class="structure">
-		<div class="menu">
-			<div class="vue_menu">
-				<div class="menu_classique">
+  <div class="structure">
+    <div class="menu">
+      <div class="vue_menu">
+        <div class="menu_classique">
           <%= link_to(controller: 'welcome') do %>
             <div class = "rubrique_menu" <% if params[:controller] == 'welcome' && params[:action] == 'index' %> id="selected" <% end %>>
               <p class = "center">Accueil</p>
@@ -46,12 +42,12 @@
           <% end %>
           <%= link_to(controller: 'welcome', action: 'innovate_together') do %>
             <div class = "rubrique_menu" <% if params[:controller] == 'welcome' && params[:action] == 'innovate_together' %> id="selected" <% end %>>
-					    <p class = "center">Innovons ensemble !</p>
+              <p class = "center">Innovons ensemble !</p>
             </div>
           <% end %>
           <%= link_to(controller: 'profiles') do %>
             <div class = "rubrique_menu" <% if params[:controller] == 'profiles' %> id="selected" <% end %>>
-					    <p class = "center">CV thèque</p>
+              <p class = "center">CV thèque</p>
             </div>
           <% end %>
           <%= link_to(controller: 'welcome', action: 'who_are_we') do %>
@@ -59,52 +55,65 @@
               <p class = "center">Qui sommes-nous ?</p>
             </div>
           <% end %>
-				</div>
-				
-				<!-- Espacement menu -->
-				<div class="espace_menu"></div>
-				<!-- Menu du site en étant connecté -->
-				<div class="titre_espace_membre">
-					Espace membres
-				</div>
+        </div>
+        
+        <!-- Espacement menu -->
+        <div class="espace_menu"></div>
+        <!-- Menu du site en étant connecté -->
+        <div class="titre_espace_membre">
+          Espace membres
+        </div>
 
-				<!-- Espacement menu -->
-				<div class="espace_menu"></div>
+        <!-- Espacement menu -->
+        <div class="espace_menu"></div>
 
-				<div class="menu_connection">
-					<form>
-						<div class="input_connexion_id">
-							<div class="logo_connexion">
-                <%= image_tag 'logo_identifiant.png',  class: 'logo_img' %>
-							</div>
-							<input type="text" class="text_input" placeholder="Identifiant">
-						</div>
-						<div class="input_connexion_mdp">
-							<div class="logo_connexion">
-                <%= image_tag 'logo_mdp.png', class: 'logo_img' %>
-							</div>
-							<input type="text" class="text_input" placeholder="Mot de passe">
-						</div>
-						<div class="input_rester"><input type="checkbox"><label>Rester connecté(e)</label></div>
-						<div class="bouton_go"><a class="bouton" href="#"><p class="text_go">GO !</p></a></div>
-					</form>
-				</div>
+        <% if user_signed_in? %>
+          <div class="menu_membre">
+            <a href="Profil_Membre.php"><div class = "rubrique_membre"><p class = "center">Ton profil</p></div></a>
+            <a href="rediger.php"><div class = "rubrique_membre"><p class = "center">Rédigez un article</p></div></a>
+            <a href="job.php"><div class = "rubrique_membre"><p class = "center">JOB thèque</p></div></a>
+          </div>
+        <% else %>
+          <div class="menu_connection">
+            <form accept-charset="UTF-8" action="/users/sign_in" class="new_user" id="new_user" method="post"><div style="display:none"><input name="utf8" type="hidden" value=""><input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"></div>
+              <div class="input_connexion_id">
+                <div class="logo_connexion">
+                  <%= image_tag 'logo_identifiant.png', class: 'logo_img' %>
+                </div>
+                <!--<input type="text" class="text_input" placeholder="Identifiant">-->
+                <input autofocus="autofocus" id="user_email" name="user[email]" class="text_input" placeholder="E-mail" type="email" value="">
+              </div>
+              <div class="input_connexion_mdp">
+                <div class="logo_connexion">
+                  <%= image_tag 'logo_mdp.png', class: 'logo_img' %>
+                </div>
+    <input autocomplete="off" id="user_password" name="user[password]" type="password" class="text_input" placeholder="Mot de passe">
+              </div>
 
-				<div class="espace">
+              <div class="field text_input input_rester">
+                <input name="user[remember_me]" type="hidden" value="0"><input id="user_remember_me" name="user[remember_me]" type="checkbox" value="1">
+                <label for="user_remember_me">Rester connecté(e)</label>
+              </div>
 
-				</div>
+              <div class="actions">
+                <button name="commit" type="submit" class="bouton_go test_go" style="border: none; color: white">GO !</button>
+              </div>
+            </form>
+          </div>
+        <% end %>
 
+        <div class="espace"></div>
 
-				<div class="jaune">
+        <% if user_signed_in? %><div class="salutation">Hello <%= current_user.firstname %> !</div><% end %>
 
-				</div>
-			</div>
+        <div class="jaune"></div>
+      </div>
+    </div>
 
-		</div>
-		<div class="Page">
+    <div class="Page">
       <%= yield %>
-		</div>
-	</div>
+    </div>
+  </div>
 </body>
 </html>
 

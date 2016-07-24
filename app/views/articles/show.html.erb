@@ -27,7 +27,7 @@ Articles<span class="slash_color_blue"> /</span><p></p>
   <%= @article.content %>
 </div>
 
-<% if current_user %>
+<% if user_signed_in? %>
 <div class="commentaire_article">
   Mettre votre commentaire</br></br>
   <textarea class="votre_commentaire"rows="5"></textarea>

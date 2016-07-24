@@ -11,9 +11,9 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
 
-  get 'welcome/index'
-  get 'welcome/who_are_we' => 'welcome#who_are_we'
-  get 'welcome/innovate_together' => 'welcome#innovate_together'
+  get '/welcome/index'
+  get '/welcome/who_are_we' => 'welcome#who_are_we'
+  get '/welcome/innovate_together' => 'welcome#innovate_together'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
