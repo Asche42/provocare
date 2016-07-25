@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :offers
 
   resources :articles
-  resources :profiles, :only => [:show, :index]
+  resources :profiles
 
   #resources :users
   devise_for :users, :skip => [:registration], controllers: {

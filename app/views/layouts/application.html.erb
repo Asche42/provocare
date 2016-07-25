@@ -46,7 +46,7 @@
             </div>
           <% end %>
           <%= link_to(controller: 'profiles') do %>
-            <div class = "rubrique_menu" <% if params[:controller] == 'profiles' %> id="selected" <% end %>>
+            <div class = "rubrique_menu" <% if params[:controller] == 'profiles' && ['show', 'index'].include?(params[:action]) %> id="selected" <% end %>>
               <p class = "center">CV thèque</p>
             </div>
           <% end %>
@@ -69,7 +69,11 @@
 
         <% if user_signed_in? %>
           <div class="menu_membre">
-            <a href="Profil_Membre.php"><div class = "rubrique_membre"><p class = "center">Ton profil</p></div></a>
+            <%= link_to(controller: 'profiles', action: 'edit', id: current_user.id) do %>
+              <div class="rubrique_membre" <% if params[:controller] == 'profiles' && params[:action] == 'edit' %> id="selected_membre" <% end %>>
+                <p class = "center">Mon profil</p>
+              </div>
+            <% end %>
             <a href="rediger.php"><div class = "rubrique_membre"><p class = "center">Rédigez un article</p></div></a>
             <a href="job.php"><div class = "rubrique_membre"><p class = "center">JOB thèque</p></div></a>
           </div>
@@ -108,6 +112,12 @@
 
         <div class="jaune"></div>
       </div>
+    </div>
+
+    <div>
+      <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
     </div>
 
     <div class="Page">
