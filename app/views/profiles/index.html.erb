@@ -10,7 +10,7 @@ CV thèque <span class="slash_color_blue"> /</span><p></p>
       <div class="case">
         <%= link_to({action: 'show', id: user.id}, class: 'bouton') do %>
           <div class="photo_case">
-            <%= image_tag 'Profil_romain.png', class: 'profil_CV_theque' %>
+            <%= image_tag user.gravatar_url, class: 'profil_CV_theque' %>
           </div>
           <div class="text_case">
             <%= image_tag 'icon_diplome.png', class: 'icon_diplome' %>

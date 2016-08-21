@@ -1,6 +1,6 @@
 CV thèque<span class="slash_color_blue"> /</span><p></p>
 <div class="vue_profil">
-  <div class="photo_profil"><div class="espace"></div><div><%= image_tag 'Profil_romain.png', class: 'Photo_profil' %></div></div>
+  <div class="photo_profil"><div class="espace"></div><div><%= image_tag @user.gravatar_url, class: 'Photo_profil' %></div></div>
   <div class="descript_profil"><p class="profil_descript"><%= @user.firstname %> </br> <%= @user.job %> </br> chez <%= @user.company %></p></div>
   <div class="espace"></div>
   <div class='img_diplome'><div class="espace"></div><DIV class="cadre_diplome"><%= image_tag 'icon_diplome.png', class: 'icon' %><p class="date_diplome"><%= @user.promotion %></p></DIV></div>

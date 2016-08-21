@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  include Gravtastic
+  gravtastic :size => 512, :default => "identicon"
+
   has_many :articles
   has_many :offers
   has_many :comments
