@@ -1,0 +1,63 @@
+CV thèque<span class="slash_color_rose"> /</span><p></p>
+<div class="vue_profil">
+  <div class="photo_profil"><div class="espace"></div><div><%= image_tag @user.gravatar_url, class: 'Photo_profil' %></div></div>
+  <div class="descript_profil"><p class="profil_descript"><%= @user.firstname %> </br> <%= @user.job %> chez <%= @user.company %></p></div>
+  <div class="espace"></div>
+  <div class='img_diplome'><div class="espace"></div><DIV class="cadre_diplome"><%= image_tag 'icon_diplome.png', class: 'icon' %><p class="date_diplome"> <%= @user.promotion %></p></DIV></div>
+</div>
+<div class="ligne_color">
+  <div class="color" id="color1"></div>
+  <div class="color" id="color2"></div>
+  <div class="color" id="color3"></div>
+  <div class="color" id="color4"></div>
+  <div class="color" id="color5"></div>
+  <div class="color" id="color6"></div>
+  <div class="color" id="color7"></div>
+  <div class="color" id="color8"></div>
+  <div class="color" id="color9"></div>
+  <div class="color" id="color10"></div>
+  <div class="color" id="color11"></div>
+  <div class="color" id="color12"></div>
+
+</div>
+<div class="contact_modif">
+  <%= form_for(@user, url: profile_path(@user)) do |f| %>
+    <div class="titre_membre">
+      <div>
+        <label><strong>Profession : </strong></label></br></br>
+        <label><strong>Société : </strong></label>
+      </div>
+      <div class="input_titre_membre">
+        <%= f.text_field :job, class: 'input_titre' %><br><br>
+        <%= f.text_field :company, class: 'input_titre' %>
+      </div>
+
+
+    </div></br></br>
+
+    <div class="bouton_changer_photo"><a class="bouton" href="https://fr.gravatar.com/"><p class="text_bouton">Changer ma photo</p></a></div>
+    </br></br>
+
+    <div class="input_lk">
+      <label class="logo"><%= image_tag 'logo_lk.png', class: 'logo_img' %>
+      </label>
+      <%= f.text_field :linkedin, class: 'lien_input' %><br><br>
+    </div>
+    <div class="input_tw">
+      <label class="logo"><%= image_tag 'logo_twitter.png', class: 'logo_img' %>
+      </label>
+      <%= f.text_field :twitter, class: 'lien_input' %><br><br>
+    </div>
+    <div class="input_descript">
+      <label class="label_descript">Ma description <span class="typo_rose">(en quelques mots)</span>
+      </label></br>
+      <textarea name="description" class="text_descript" rows= "12"><%= @user.description %></textarea>
+    </div>
+
+    <div class="modifier_profil">
+      <div class="bouton_modifier">
+        <%= f.submit 'Modifier mon profil', class: 'bouton text_bouton' %>
+      </div>
+    </div>
+  <% end %>
+</div>
