@@ -18,7 +18,7 @@ Articles<span class="slash_color_blue"> /</span><p></p>
 
   <div class="auteur_article">
     <div class="line_auteur">
-      <div class="nom_auteur">Rédigé par <%= @article.user.firstname + " " + @article.user.lastname %></div><div class="img_auteur"><%= image_tag 'Profil_romain.png', class: 'auteur_img' %></div>
+      <div class="nom_auteur">Rédigé par <%= @article.user.firstname + " " + @article.user.lastname %></div><div class="img_auteur"><%= image_tag @article.user.gravatar_url, class: 'auteur_img' %></div>
     </div>
   </div>
 
