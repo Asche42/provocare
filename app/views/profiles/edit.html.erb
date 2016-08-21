@@ -51,7 +51,7 @@ CV thèque<span class="slash_color_rose"> /</span><p></p>
     <div class="input_descript">
       <label class="label_descript">Ma description <span class="typo_rose">(en quelques mots)</span>
       </label></br>
-      <textarea name="description" class="text_descript" rows= "12"><%= @user.description %></textarea>
+      <%= f.text_area(:description, rows: 12, class: 'text_descript') %>
     </div>
 
     <div class="modifier_profil">
