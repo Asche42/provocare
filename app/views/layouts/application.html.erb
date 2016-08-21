@@ -75,7 +75,11 @@
               </div>
             <% end %>
             <a href="rediger.php"><div class = "rubrique_membre"><p class = "center">Rédigez un article</p></div></a>
-            <a href="job.php"><div class = "rubrique_membre"><p class = "center">JOB thèque</p></div></a>
+            <%= link_to(controller: 'welcome', action: 'job_theque') do %>
+              <div class="rubrique_membre">
+                <p class = "center">Job thèque</p>
+              </div>
+            <% end %>
           </div>
         <% else %>
           <div class="menu_connection">
