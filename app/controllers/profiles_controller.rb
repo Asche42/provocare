@@ -5,6 +5,10 @@ class ProfilesController < ApplicationController
 
   def edit
     @user = User.find_by(id: params[:id])
+    if @user != current_user and not current_user.admin?
+      flash[:error] = "Vous n'avez pas les droits nécessaires pour éditer ce profil."
+      render 'show'
+    end
   end
 
   def index
