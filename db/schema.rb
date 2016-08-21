@@ -40,12 +40,6 @@ ActiveRecord::Schema.define(version: 20150922212155) do
   add_index "comments", ["article_id"], name: "index_comments_on_article_id"
   add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
-  create_table "companies", force: true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "offers", force: true do |t|
     t.integer  "offer_type", default: 0, null: false
     t.integer  "user_id"
