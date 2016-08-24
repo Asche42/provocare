@@ -17,7 +17,7 @@ class ProfilesController < ApplicationController
 
   def update
     @user = User.find_by(id: params[:id])
-    if @user.update_attributes(user_params)
+    if (current_user == @user or current_user.admin?) and @user.update_attributes(user_params)
       flash[:success] = 'Profil mis à jour.'
       render 'edit'
     else
