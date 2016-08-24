@@ -26,6 +26,15 @@ Articles<span class="slash_color_blue"> /</span><p></p>
 <div class="descript_article">
   <%= @article.content %>
 </div>
+<% if can_edit?(@article) %>
+<div class="ajouter_commentaire">
+  <div class="bouton_ajouter_commentaire">
+    <%= link_to({action: 'edit'}, {class: 'bouton'}) do %>
+      <p class="text_bouton">Éditer cet article</p>
+    <% end %>
+  </div>
+</div>
+<% end %>
 
 <% if user_signed_in? %>
 <div class="commentaire_article">

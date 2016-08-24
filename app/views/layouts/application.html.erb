@@ -74,7 +74,11 @@
                 <p class = "center">Mon profil</p>
               </div>
             <% end %>
-            <a href="rediger.php"><div class = "rubrique_membre"><p class = "center">Rédigez un article</p></div></a>
+            <%= link_to(controller: 'articles', action: 'new') do %>
+              <div class="rubrique_membre" <% if params[:controller] == 'articles' && params[:action] == 'new' %> id="selected_membre" <% end %>>
+                <p class = "center">Rédiger un article</p>
+              </div>
+            <% end %>
             <%= link_to(controller: 'welcome', action: 'job_theque') do %>
               <div class="rubrique_membre">
                 <p class = "center">Job thèque</p>

@@ -1,14 +1,12 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
-  before_action -> { check_ownership(@article.user) }, only: [:edit, :create, :update, :destroy]
+  before_action -> { check_ownership(@article.user) }, only: [:edit, :update, :destroy]
 
   respond_to :html
 
   def index
     @articles = Article.all
-    @admin = (current_user and current_user.admin?)
-    
     respond_with(@articles)
   end
 
@@ -27,13 +25,18 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+    STDERR.puts article_params
     @article.user = current_user
     @article.save
     respond_with(@article)
   end
 
   def update
-    @article.update(article_params)
+    if (@article.user == current_user or current_user.admin?) and @article.update(article_params)
+      flash[:success] = 'Article mis à jour.'
+    else
+      flash[:error] = 'Une erreur est survenue lors de l\'édition de l\'article.'
+    end
     respond_with(@article)
   end
 
@@ -48,6 +51,6 @@ class ArticlesController < ApplicationController
     end
 
     def article_params
-      params.require(:article).permit(:user_id, :content, :title, :description)
+      params.require(:article).permit(:content, :title, :subtitle)
     end
 end
