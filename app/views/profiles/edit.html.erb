@@ -24,12 +24,16 @@ CV thèque<span class="slash_color_rose"> /</span><p></p>
   <%= form_for(@user, url: profile_path(@user)) do |f| %>
     <div class="titre_membre">
       <div>
-        <label><strong>Profession : </strong></label></br></br>
-        <label><strong>Société : </strong></label>
+        <label><strong>Profession : </strong></label><br><br>
+        <label><strong>Société : </strong></label><br><br>
+        <label><strong>Nouveau mot de passe (laisser vide pour conserver) : </strong></label><br><br>
+        <label><strong>Confirmation : </strong></label>
       </div>
       <div class="input_titre_membre">
         <%= f.text_field :job, class: 'input_titre' %><br><br>
-        <%= f.text_field :company, class: 'input_titre' %>
+        <%= f.text_field :company, class: 'input_titre' %><br><br>
+        <%= f.password_field :password, :autocomplete => 'off', class: 'input_titre' %><br><br>
+        <%= f.password_field :password_confirmation, class: 'input_titre' %>
       </div>
 
 
