@@ -84,6 +84,11 @@
                 <p class = "center">Job thèque</p>
               </div>
             <% end %>
+            <%= link_to(destroy_user_session_path, method: :delete) do %>
+              <div class="rubrique_membre">
+                <p class = "center">Déconnexion</p>
+              </div>
+            <% end %>
           </div>
         <% else %>
           <div class="menu_connection">
