@@ -24,7 +24,7 @@ Articles<span class="slash_color_blue"> /</span><p></p>
 
 </div>
 <div class="descript_article">
-  <%= @article.content %>
+  <%=raw RedCloth.new(@article.content).to_html %>
 </div>
 <% if can_edit?(@article) %>
 <div class="ajouter_commentaire">
