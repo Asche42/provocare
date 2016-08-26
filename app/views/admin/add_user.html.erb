@@ -1,19 +1,37 @@
 Ajouter un utilisateur <span class="slash_color_rose"> /</span><p></p>
-<div class="contact_modif">
-  <form method="post" action="#">
-    <div class="titre_membre">
-      <div>
-        <label><strong>Promotion : </strong></label><br><br>
-        <label><strong>Nom : </strong></label><br><br>
-        <label><strong>Prénom : </strong></label><br><br>
-        <label><strong>Mail : </strong></label>
-      </div>
-      <div class="input_titre_membre">
-        <input class="input_titre" type="text" placeholder="Promotion "><br><br>
-        <input class="input_titre" type="text" placeholder="Nom"><br><br>
-        <input class="input_titre" type="text" placeholder="Prénom"><br><br>
-        <input class="input_titre" type="text" placeholder="Mail"><br><br>
+<% if not @result %>
+  <%= form_tag(controller: :admin, action: :add_user) do %>
+    <div class="contact_modif">
+      <form method="post" action="#">
+        <div class="titre_membre">
+          <div>
+            <label><strong>Nom : </strong></label><br><br>
+            <label><strong>Prénom : </strong></label><br><br>
+            <label><strong>Mél : </strong></label><br><br>
+            <label><strong>Promotion : </strong></label>
+          </div>
+          <div class="input_titre_membre">
+            <%= text_field_tag :lastname, nil, class: 'input_titre', placeholder: 'Nom' %><br><br>
+            <%= text_field_tag :firstname, nil, class: 'input_titre', placeholder: 'Prénom' %><br><br>
+            <%= text_field_tag :email, nil, class: 'input_titre', placeholder: 'Mél' %><br><br>
+            <%= text_field_tag :promotion, nil, class: 'input_titre', placeholder: 'Promotion' %>
+          </div>
+        </div>
+    </div>
+    <div class="soumettre_article">
+      <div class="bouton_soumettre_article">
+        <%= submit_tag "Importer le fichier CSV", class: 'bouton text_bouton' %>
       </div>
     </div>
-</div>
-<div class="bouton_changer_photo"><a class="bouton" href="#"><p class="text_bouton">Ajouter</p></a></div>
+  <% end %>
+<% else %>
+  <p>L'utilisateur suivant a été ajouté :</p>
+  <p><ul style="font-family: monospace">
+    <li><%= "#{@result.id} :" %>
+      <ul>
+        <li>Nom : <%= "#{@result.firstname} #{@result.lastname}" %></li>
+        <li>Mot de passe : <%= "#{@result.password}" %></li>
+      </ul>
+    </li>
+  </ul></p>
+<% end %>

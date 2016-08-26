@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   post '/admin/batch_processing' => 'admin#batch_processing'
   get '/admin/frontpage' => 'admin#frontpage'
   get '/admin/add_user' => 'admin#add_user'
+  post '/admin/add_user' => 'admin#add_user'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
