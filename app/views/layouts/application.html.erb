@@ -144,13 +144,13 @@
       </div>
     </div>
 
-    <div>
-      <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>"><%= value %></div>
-      <% end %>
-    </div>
-
     <div class="Page">
+      <div>
+        <% flash.each do |key, value| %>
+          <div class="alert alert-<%= key %>"><%= value %></div><br>
+        <% end %>
+      </div><br><br>
+
       <%= yield %>
     </div>
   </div>

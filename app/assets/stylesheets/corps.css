@@ -891,3 +891,17 @@ a, a:hover, a:visited{
 	font-size: 8em;
 	font-family: 'Indie Flower';
 }
+
+.alert {
+  font-size: bold;
+  color: white;
+  padding: 3px;
+}
+
+.alert-error {
+  background-color: red;
+}
+
+.alert-success {
+  background-color: green;
+}
