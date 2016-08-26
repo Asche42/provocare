@@ -1,0 +1,23 @@
+Batch processing CSV <span class="slash_color_rose"> /</span><p></p>
+<% if @results&.empty? %>
+  <%= form_tag(controller: :admin, action: :batch_processing) do %>
+    <%= text_area_tag :csv_content, "Nom,Prénom,Mél,Promotion", size: "100x25", style: "font-family: monospace" %>
+    <div class="soumettre_article">
+      <div class="bouton_soumettre_article">
+        <%= submit_tag "Importer le fichier CSV", class: 'bouton text_bouton' %>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+  <p>Les <%= @results.size %> utilisateurs suivants ont été ajoutés :</p>
+  <p><ul style="font-family: monospace">
+    <% @results.each do |result| %>
+      <li><%= "#{result.id} :" %>
+        <ul>
+          <li>Nom : <%= "#{result.firstname} #{result.lastname}" %></li>
+          <li>Mot de passe : <%= "#{result.password}" %></li>
+        </ul>
+      </li>
+    <% end %>
+  </ul></p>
+<% end %>

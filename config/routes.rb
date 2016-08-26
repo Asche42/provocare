@@ -16,6 +16,11 @@ Rails.application.routes.draw do
   get '/welcome/innovate_together' => 'welcome#innovate_together'
   get '/welcome/job_theque' => 'welcome#job_theque'
 
+  get '/admin/batch_processing' => 'admin#batch_processing'
+  post '/admin/batch_processing' => 'admin#batch_processing'
+  get '/admin/frontpage' => 'admin#frontpage'
+  get '/admin/add_user' => 'admin#add_user'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -84,6 +84,23 @@
                 <p class = "center">Job thèque</p>
               </div>
             <% end %>
+            <% if current_user.admin? %>
+              <%= link_to(controller: 'admin', action: 'batch_processing') do %>
+                <div class="rubrique_membre">
+                  <p class = "center">Batch processing</p>
+                </div>
+              <% end %>
+              <%= link_to(controller: 'admin', action: 'add_user') do %>
+                <div class="rubrique_membre">
+                  <p class = "center">Ajouter un utilisateur</p>
+                </div>
+              <% end %>
+              <%= link_to(controller: 'admin', action: 'frontpage') do %>
+                <div class="rubrique_membre">
+                  <p class = "center">Page d'accueil</p>
+                </div>
+              <% end %>
+            <% end %>
             <%= link_to(destroy_user_session_path, method: :delete) do %>
               <div class="rubrique_membre">
                 <p class = "center">Déconnexion</p>
