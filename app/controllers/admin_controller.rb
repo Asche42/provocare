@@ -31,7 +31,7 @@ class AdminController < ApplicationController
 
   def frontpage
     settings = %w(home_page innovate_together who_are_we)
-    settings.each { |name| instance_variable_set("@#{name}", Settings.find_by(key: name) || {}) }
+    settings.each { |name| instance_variable_set("@#{name}", Settings.find_by(key: name) || {value: ''}) }
 
     if params[:home_page]
       begin
