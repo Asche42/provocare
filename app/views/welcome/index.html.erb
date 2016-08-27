@@ -1,7 +1,7 @@
 Accueil<span class="slash_color_blue"> /</span><p></p>
 <div class="block_accueil1">
   <p>
-    <%=raw RedCloth.new(@setting) %>
+    <%=raw RedCloth.new(@setting).to_html %>
   </p>
 </div>
 <div class="block_accueilbis">
