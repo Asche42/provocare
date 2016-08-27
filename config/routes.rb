@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get '/admin/batch_processing' => 'admin#batch_processing'
   post '/admin/batch_processing' => 'admin#batch_processing'
   get '/admin/frontpage' => 'admin#frontpage'
+  post '/admin/frontpage' => 'admin#frontpage'
   get '/admin/add_user' => 'admin#add_user'
   post '/admin/add_user' => 'admin#add_user'
 
