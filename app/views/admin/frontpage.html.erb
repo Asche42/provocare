@@ -4,17 +4,17 @@ Changer contenu page<span class="slash_color_rose"> /</span><p></p>
   <div class="descript_article">
     <strong>Actualité page accueil :</strong><br><br>
     <span style="font-family: monospace">Dernière mise à jour : <%= @home_page&.updated_at&.localtime %></span><br>
-    <%= text_area_tag :home_page, @home_page.value, rows: 30, class: 'redaction_article' %><br><br>
+    <%= text_area_tag :home_page, @home_page&.value, rows: 30, class: 'redaction_article' %><br><br>
   </div>
   <div class="descript_article">
     <strong>Qui sommes-nous ? :</strong><br><br>
     <span style="font-family: monospace">Dernière mise à jour : <%= @who_are_we&.updated_at&.localtime %></span><br>
-    <%= text_area_tag :who_are_we, @who_are_we.value, rows: 30, class: 'redaction_article' %><br><br>
+    <%= text_area_tag :who_are_we, @who_are_we&.value, rows: 30, class: 'redaction_article' %><br><br>
   </div>
   <div class="descript_article">
     <strong>Innovons ensemble :</strong><br><br>
     <span style="font-family: monospace">Dernière mise à jour : <%= @innovate_together&.updated_at&.localtime %></span><br>
-    <%= text_area_tag :innovate_together, @innovate_together.value, rows: 30, class: 'redaction_article' %><br><br>
+    <%= text_area_tag :innovate_together, @innovate_together&.value, rows: 30, class: 'redaction_article' %><br><br>
   </div>
   <div class="soumettre_article">
     <div class="bouton_soumettre_article">
