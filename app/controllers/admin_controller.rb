@@ -15,6 +15,12 @@ class AdminController < ApplicationController
             @results << User.create!(Hash[USER_KEYS.zip([SecureRandom.urlsafe_base64] + row)])
           end
         end
+
+        # Sending confirmation emails.
+        @results.each do |result|
+          UserMailer.welcome_email(result).deliver
+        end
+
         flash[:success] = "Utilisateurs ajoutés"
       rescue ActiveRecord::RecordInvalid => e
         @results = []
@@ -32,6 +38,8 @@ class AdminController < ApplicationController
     if params[:email]
       begin
         @result = User.create!({ :password => SecureRandom.urlsafe_base64 }.merge(user_params))
+        # Sending confirmation email.
+        UserMailer.welcome_email(@result).deliver
         flash[:success] = "Utilisateur ajouté."
       rescue ActiveRecord::RecordInvalid => e
         @result = nil

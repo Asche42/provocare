@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Bienvenue sur Provocare, <%= @user.firstname %> !</h1>
+    <p>
+      En tant qu'ancien élève du mastère spécialisé Innovation et transformation,
+      un compte t'a été créé sur Provocare par l'administrateur,
+      c'est maintenant à ton tour de jouer !<br>
+      Tes identifiants sont les suivants :
+      <ul>
+        <li>Identifiant : <%= @user.email %></li>
+        <li>Mot de passe : <%= @user.password %></li>
+      </ul>
+    </p>
+    <p>
+      Pour te connecter, suis ce lien : <%= @url %>.
+    </p>
+    <p>
+    Conformément aux disposition de la <a href="https://www.legifrance.gouv.fr/affichTexte.do?cidTexte=LEGITEXT000006068624&dateTexte=vig">loi informatique et libertés</a>, tu possèdes
+      un droit d'opposition, d'accès et de rectification de tes données. Tes données
+      sont conservées sur des serveurs Heroku situés en Europe.
+    </p>
+    <p>
+      N'hésite pas à répondre à ce courriel si tu as des questions.
+    </p>
+    <p>Bienvenue dans notre famille et bonne journée !</p>
+    <p><br>Bien à toi,</p>
+    <p style="text-align: right">Provocare.</p>
+    </p>
+  </body>
+</html>
