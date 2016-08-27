@@ -1,5 +1,6 @@
 require 'csv'
 require 'securerandom'
+require 'ostruct'
 
 class AdminController < ApplicationController
   before_action :verify_is_admin
@@ -31,7 +32,7 @@ class AdminController < ApplicationController
 
   def frontpage
     settings = %w(home_page innovate_together who_are_we)
-    settings.each { |name| instance_variable_set("@#{name}", Settings.find_by(key: name) || {value: ''}) }
+    settings.each { |name| instance_variable_set("@#{name}", Settings.find_by(key: name) || OpenStruct.new) }
 
     if params[:home_page]
       begin
