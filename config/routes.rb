@@ -22,6 +22,10 @@ Rails.application.routes.draw do
   get '/admin/add_user' => 'admin#add_user'
   post '/admin/add_user' => 'admin#add_user'
 
+  %w( 400 404 418 500 ).each do |code|
+    get code, :to => "errors#show", :code => code
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

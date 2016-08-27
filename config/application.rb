@@ -24,5 +24,6 @@ module Provocare
     config.encoding = "utf-8"
 
     config.serve_static_assets = true
+    config.exceptions_app = self.routes
   end
 end
