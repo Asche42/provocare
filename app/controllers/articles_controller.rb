@@ -25,7 +25,6 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
-    STDERR.puts article_params
     @article.user = current_user
     @article.save
     respond_with(@article)
@@ -51,6 +50,6 @@ class ArticlesController < ApplicationController
     end
 
     def article_params
-      params.require(:article).permit(:content, :title, :subtitle)
+      params.require(:article).permit(:content, :title, :subtitle, :picture)
     end
 end

@@ -7,7 +7,7 @@ Articles<span class="slash_color_blue"> /</span><p></p>
 <div class="tableau_case">
   <% @articles.each_with_index do |article, index| %>
     <% if index.modulo(4) == 0 %><div class="line_case"><% end %>
-      <div class="case" style="background-position: center; background-image: url('<%= asset_url 'logo_identifiant.png' %>')">
+      <div class="case" style="background-position: center; background-image: url('<%= article.picture || (asset_url 'logo_identifiant.png') %>')">
         <div class="color-article<%= rand(1..3) %>"></div>
         <%= link_to({action: 'show', id: article.id}, class: 'bouton2') do %>
           <div class="espace_icon_article">

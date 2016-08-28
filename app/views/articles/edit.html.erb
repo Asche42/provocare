@@ -2,20 +2,21 @@ Rédiger un article<span class="slash_color_rose"> /</span><p></p>
 
 <%= form_for(@article, url: article_path(@article)) do |f| %>
   <div class="details_article">
-    <div class="img_article"><%= image_tag 'logo_identifiant.png', class: 'article_img' %></div>
+    <div class="img_article"><%= image_tag @article.picture || 'logo_identifiant.png', class: 'article_img' %></div>
 
     <div class="details_cadre">
       <div class="details_redaction">
         <div>
-          <strong>Titre : </strong></br></br>
-          <strong>Sous-titre :</strong>
+          <strong>Titre : </strong><br><br>
+          <strong>Sous-titre :</strong><br><br>
+          <strong>Lien vers l'image :</strong>
         </div>
         <div class="input_article">
-          <%= f.text_field :title %></br></br>
-          <%= f.text_field :subtitle %>
+          <%= f.text_field :title %><br><br>
+          <%= f.text_field :subtitle %><br><br>
+          <%= f.text_field :picture %>
         </div>
       </div>
-      <div class="bouton_changer_img"><a class="bouton" href="#"><p class="text_bouton">Changer l'image</p></a></div>
     </div>
   </div>
 
