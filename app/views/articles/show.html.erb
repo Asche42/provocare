@@ -34,6 +34,13 @@ Articles<span class="slash_color_blue"> /</span><p></p>
     <% end %>
   </div>
 </div>
+<div class="ajouter_commentaire">
+  <div class="bouton_ajouter_commentaire">
+    <%= link_to(article_path(@article), method: :delete, data: { confirm: 'Êtes-vous certain de vouloir supprimer cet article ?' }, class: 'bouton') do %>
+      <p class="text_bouton">Supprimer cet article</p>
+    <% end %>
+  </div>
+</div>
 <% end %>
 
 <% if user_signed_in? %>
