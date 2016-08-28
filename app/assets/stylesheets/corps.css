@@ -486,7 +486,7 @@ a, a:hover, a:visited{
 /*Positionnement de la photo du membre*/
 .photo_profil{
 	margin-left: 10%;
-	height: 25%;
+	height: 100%;
 	width: 30%;
 	overflow: hidden;
 	/*border: 1px green solid;*/
