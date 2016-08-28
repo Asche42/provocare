@@ -1,6 +1,7 @@
 class WelcomeController < ApplicationController
   def index
     @setting = Settings.find_by(key: 'home_page')&.value || " "
+    @last_article = Article.last || Article.new
   end
 
   def who_are_we
