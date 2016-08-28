@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   protected
   def check_ownership(owner)
     unless current_user and (owner == current_user or current_user.admin?)
-      flash[:alert] = "Vous n'avez pas accès à cette page."
+      flash[:error] = "Vous n'avez pas accès à cette page."
       redirect_to root_path
     end
   end

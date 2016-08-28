@@ -1,9 +1,9 @@
 CV thèque<span class="slash_color_blue"> /</span><p></p>
 <div class="vue_profil">
-  <div class="photo_profil"><div class="espace"></div><div><%= image_tag @user.gravatar_url, class: 'Photo_profil' %></div></div>
-  <div class="descript_profil"><p class="profil_descript"><%= @user.firstname %> </br> <%= @user.job %> </br> chez <%= @user.company %></p></div>
+  <div class="photo_profil"><div class="espace"></div><div><%= image_tag @user&.gravatar_url, class: 'Photo_profil' %></div></div>
+  <div class="descript_profil"><p class="profil_descript"><%= @user&.firstname %> </br> <%= @user&.job %> </br> chez <%= @user&.company %></p></div>
   <div class="espace"></div>
-  <div class='img_diplome'><div class="espace"></div><DIV class="cadre_diplome"><%= image_tag 'icon_diplome.png', class: 'icon' %><p class="date_diplome"><%= @user.promotion %></p></DIV></div>
+  <div class='img_diplome'><div class="espace"></div><DIV class="cadre_diplome"><%= image_tag 'icon_diplome.png', class: 'icon' %><p class="date_diplome"><%= @user&.promotion %></p></DIV></div>
 </div>
 <div class="ligne_color">
   <div class="color" id="color1"></div>
@@ -22,15 +22,31 @@ CV thèque<span class="slash_color_blue"> /</span><p></p>
 </div>
 <div class="contact">
   <div class="position_logo">
-    <div class="logo_linkedin"><a class="bouton" href="<%= @user.linkedin || '#' %>"><%= image_tag 'logo_lk.png', class: 'img_logo_lk' %></a></div>
-    <div class="logo_twitter"><a class="bouton" href="<%= @user.twitter || '#' %>"><%= image_tag 'logo_twitter.png', class: 'img_logo_tw' %></a></div>
+    <div class="logo_linkedin"><a class="bouton" href="<%= @user&.linkedin || '#' %>"><%= image_tag 'logo_lk.png', class: 'img_logo_lk' %></a></div>
+    <div class="logo_twitter"><a class="bouton" href="<%= @user&.twitter || '#' %>"><%= image_tag 'logo_twitter.png', class: 'img_logo_tw' %></a></div>
   </div>
 </div>
 <div class="description">
   <h3>En quelques mots</h3>
-  <p><%=raw RedCloth.new(@user.description || '').to_html %></p>
+  <p><%=raw RedCloth.new(@user&.description || '').to_html %></p>
 </div>
+<% if can_edit_user?(@user) %>
+<div class="ajouter_commentaire">
+  <div class="bouton_ajouter_commentaire">
+    <%= link_to({action: 'edit'}, {class: 'bouton'}) do %>
+      <p class="text_bouton">Éditer ce profil</p>
+    <% end %>
+  </div>
+</div>
+<div class="ajouter_commentaire">
+  <div class="bouton_ajouter_commentaire">
+    <%= link_to(profile_path(@user), method: :delete, data: { confirm: 'Êtes-vous certain de vouloir supprimer ce profil ?' }, class: 'bouton') do %>
+      <p class="text_bouton">Supprimer ce profil</p>
+    <% end %>
+  </div>
+</div>
+<% end %>
 <div class="interaction">
-  <div class="bouton_contact"><a class="bouton" href="<%= "mailto:#{@user.email}" %>"><p class="text_bouton">Contactez-moi</p></a></div>
+  <div class="bouton_contact"><a class="bouton" href="<%= "mailto:#{@user&.email}" %>"><p class="text_bouton">Contactez-moi</p></a></div>
   <div class="retour_CV"><%= link_to({action: 'index'}, class: 'bouton') do %><p class="text_bouton">Retour à la CV thèque</p><% end %></div>
 </div>

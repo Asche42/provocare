@@ -26,7 +26,7 @@ Articles<span class="slash_color_blue"> /</span><p></p>
 <div class="descript_article">
   <%=raw RedCloth.new(@article.content || '').to_html %>
 </div>
-<% if can_edit?(@article) %>
+<% if can_edit_item?(@article) %>
 <div class="ajouter_commentaire">
   <div class="bouton_ajouter_commentaire">
     <%= link_to({action: 'edit'}, {class: 'bouton'}) do %>
