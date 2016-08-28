@@ -1,4 +1,4 @@
-Batch processing CSV <span class="slash_color_rose"> /</span><p></p>
+Traitement par lots de CSV <span class="slash_color_rose"> /</span><p></p>
 <% if not @results or @results.empty? %>
   <%= form_tag(controller: :admin, action: :batch_processing) do %>
     <%= text_area_tag :csv_content, "Nom,Prénom,Mél,Promotion", size: "100x25", style: "font-family: monospace" %>
